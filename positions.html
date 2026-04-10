@@ -1,40 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Positions</title>
     <style>
-        *{border: 1px solid red; margin: 0px; padding: 0px;}
-        .box{display: inline-block;
-        width: 100px;
-        height: 100px;
-        border-color: black;
-    }
-        #box1{background-color: hotpink;
-        position: relative;
-        top: 100px;
-        left: 150px;
-    }
-        #box2{background-color: gray;
-        position: static;
-        top:200px;
-    }
-        #box3{background-color: yellow;
-        position: absolute;
-        top: 5px;
-    }
-        #box4{background-color: blue;
-        position: fixed;
-        bottom: 0px;
-        right: 0px;
-    }
-        #box5{background-color: purple;}
-        span:last-child{background-color: red;}
+        *{border: 1px solid red;margin: 0%; padding: 20px;}
+
+        .Container{position: static;border-color: blueviolet;border-width: 10px;}
+
+        .box{display:inline-block;width: 100px;height: 100px;border-color: black;}
+
+        #box1{background-color: aqua;position: relative;left: 50px;top: 300px;}
+
+        #box2{background-color: beige;position:absolute ;opacity: 0.5;text-align: center;top: 300px;}
+
+        #box3{background-color: blue;position: fixed;top: 0px;right: 0px}
+
+        #box4{background-color: blueviolet;}
+
+        #box5{background-color: chocolate;}
+
+        span:last-child{background-color: brown;}
+
     </style>
-</head>
+</head>\    
 <body>
-    <div id="container">
+    <div style="height: 100px;"><div class="Container">
         <!-- div#box$.box{$}*5 -->
         <div id="box1" class="box">1</div>
         <div id="box2" class="box">2</div>
@@ -42,6 +34,13 @@
         <div id="box4" class="box">4</div>
         <div id="box5" class="box">5</div>
         <span class="box">6</span>
+    
+        
+        
+
     </div>
+</div>
+    
+    
 </body>
 </html>
