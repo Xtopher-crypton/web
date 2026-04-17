@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 2</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 300px;
+            height: 550px;
+            background-color: white;
+            border: 3px solid #cf61cf;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            gap: 15px;
+        }
+        .logo {
+            font-family: Arial, sans-serif;
+            color: gainsboro;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .bloco {
+            width: 100%;
+            height: 20px;
+            background-color: gainsboro;
+            border-radius: 3px;
+        }
+        .bloco-curto {
+            width: 80%;
+            height: 20px;
+            background-color: gainsboro;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+        .circulo {
+            width: 60px;
+            height: 60px;
+            background-color: gainsboro;
+            border-radius: 50%;
+            margin-top: auto;
+            margin-bottom: 20px;
+        }
+        .bloco-final {
+            width: 100px;
+            height: 20px;
+            background-color: gainsboro;
+            border-radius: 3px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- div.container>div.box#box-$*5 -->
+     
+     <div class="container">
+        <div class="logo">Company Logo</div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="bloco"></div>
+        <div class="circulo"></div>
+        <div class="bloco-final"></div>
+    </div>
+</body>
+</html>
