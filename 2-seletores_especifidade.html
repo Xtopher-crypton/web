@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo especificidade de seletores</title>
+    <style>
+        /* regra 1*/ li{color:red;} 
+        /* regra 2*/ .churras{color:green;}
+        /* regra 3*/ .fruta{color:gray;}
+        /* regra 4*/ li+li.churras{color: black;}
+        /* regra 5*/ .churras[draggable="true"]{color: magenta;}
+        /* regra 6*/ #lip1,#lip2,#lip3{color:blue}
+        /* regra 7*/ #lip3.fruta{color:orange}
+        /* regra 8*/ ol>li.churras#lip5{color:purple}
+    </style>
+</head>
+<body>
+    <h1>Atividade 2 - Especificidade seletores CSS</h1>
+    <ol>
+        <!--item 1--> <li id="lip0">Abacaxi</li>
+        <!--item 2--> <li class="fruta">Melão</li>
+        <!--item 3--> <li id="lip2" class="fruta">Pera</li>
+        <!--item 4--> <li id="lip3" class="fruta">Uva</li>
+        <!--item 5--> <li id="lip4" class="fruta">Maçã</li>
+        <!--item 6--> <li class="churras">Carne</li>
+        <!--item 7--> <li class="churras">Linguiça</li>
+        <!--item 8--> <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+    </ol>
+
+    <hr>
+    <h2>Explicação das Regras Aplicadas:</h2>
+    <table border="1">
+        <tr>
+            <th>Item</th>
+            <th>Conteúdo</th>
+            <th>Cor Aplicada</th>
+            <th>Explicação (Especificidade)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Abacaxi</td>
+            <td>Red (Vermelho)</td>
+            <td>Aplica-se apenas a <strong>regra 1</strong> (li), pois não tem classe nem ID que combine com outras regras.</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Melão</td>
+            <td>Gray (Cinza)</td>
+            <td>Aplica-se a <strong>regra 3</strong> (.fruta), que tem maior especificidade (0,1,0) que a regra 1 (0,0,1).</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Pera</td>
+            <td>Blue (Azul)</td>
+            <td>Aplica-se a <strong>regra 6</strong> (#lip2), pois IDs têm a maior especificidade (1,0,0). Supera as regras 1 e 3.</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Uva</td>
+            <td>Orange (Laranja)</td>
+            <td>Aplica-se a <strong>regra 7</strong> (#lip3.fruta), pois combina ID + Classe (1,1,0), sendo mais específica que a regra 6 (1,0,0).</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Maçã</td>
+            <td>Red (Vermelho)</td>
+            <td>Aplica-se a <strong>regra 1</strong> (li). Embora tenha id="lip4", não há regra específica para esse ID, e a classe .fruta não está definida para este item no HTML original (conforme a imagem).</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Carne</td>
+            <td>Black (Preto)</td>
+            <td>Aplica-se a <strong>regra 4</strong> (li+li.churras) (especificidade 0,1,2), que é mais específica que a regra 2 (.churras, 0,1,0).</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Linguiça</td>
+            <td>Black (Preto)</td>
+            <td>Aplica-se a <strong>regra 4</strong> (li+li.churras) pela mesma razão do item anterior.</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Pão de alho</td>
+            <td>Magenta</td>
+            <td>Aplica-se a <strong>regra 5</strong> (.churras[draggable="true"]), que possui especificidade (0,2,0) devido à classe + seletor de atributo, superando a regra 4 (0,1,2).</td>
+        </tr>
+    </table>
+</body>
+</html>
