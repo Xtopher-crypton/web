@@ -14,7 +14,7 @@
             align-items: center;
             min-height: 100vh;
         }
-        .resume-container {
+        .container-curriculo {
             width: 800px;
             background-color: white;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -22,13 +22,13 @@
             overflow: hidden;
             border-radius: 8px;
         }
-        .sidebar {
+        .barra-lateral {
             width: 250px;
             background-color: #34495e;
             color: white;
             padding: 30px 20px;
         }
-        .profile-img {
+        .imagem-perfil {
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -38,40 +38,40 @@
             border: 4px solid #ecf0f1;
             object-fit: cover;
         }
-        .sidebar h2 {
+        .barra-lateral h2 {
             font-size: 18px;
             border-bottom: 1px solid #7f8c8d;
             padding-bottom: 5px;
             margin-top: 25px;
         }
-        .sidebar p {
+        .barra-lateral p {
             font-size: 13px;
             margin: 5px 0;
             color: #bdc3c7;
         }
-        .sidebar strong {
+        .barra-lateral strong {
             color: white;
             display: block;
             margin-top: 10px;
         }
 
-        .main-content {
+        .conteudo-principal {
             flex: 1;
             padding: 40px;
             color: #2c3e50;
         }
-        .main-content h1 {
+        .conteudo-principal h1 {
             font-size: 32px;
             margin: 0 0 10px 0;
             color: #2c3e50;
         }
-        .main-content .summary {
+        .conteudo-principal .resumo {
             font-size: 14px;
             color: #7f8c8d;
             line-height: 1.6;
             margin-bottom: 30px;
         }
-        .section-title {
+        .titulo-secao {
             font-size: 18px;
             font-weight: bold;
             border-bottom: 2px solid #ecf0f1;
@@ -79,42 +79,42 @@
             margin-bottom: 20px;
             text-transform: uppercase;
         }
-        .job-item {
+        .item-trabalho {
             margin-bottom: 25px;
         }
-        .job-header {
+        .cabecalho-trabalho {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 5px;
         }
-        .job-title {
+        .titulo-trabalho {
             font-weight: bold;
             font-size: 16px;
         }
-        .job-date {
+        .data-trabalho {
             font-size: 12px;
             color: #95a5a6;
         }
-        .job-location {
+        .localizacao-trabalho {
             font-size: 13px;
             font-style: italic;
             color: #7f8c8d;
             margin-bottom: 8px;
         }
-        .job-details {
+        .detalhes-trabalho {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        .job-details li {
+        .detalhes-trabalho li {
             font-size: 13px;
             color: #34495e;
             margin-bottom: 4px;
             position: relative;
             padding-left: 15px;
         }
-        .job-details li::before {
+        .detalhes-trabalho li::before {
             content: "•";
             position: absolute;
             left: 0;
@@ -123,9 +123,9 @@
     </style>
 </head>
 <body>
-    <div class="resume-container">
-        <div class="sidebar">
-            <img src="https://via.placeholder.com/150" alt="Joana Barbosa" class="profile-img">
+    <div class="container-curriculo">
+        <div class="barra-lateral">
+            <img src="img-atividade2/Joana.webp" alt="Joana Barbosa" class="imagem-perfil">
             
             <h2>Pessoal</h2>
             <p><strong>Nome</strong> Joana Barbosa</p>
@@ -137,21 +137,21 @@
             <p>Salsa, Lisboa</p>
         </div>
 
-        <div class="main-content">
+        <div class="conteudo-principal">
             <h1>Joana Barbosa</h1>
-            <p class="summary">
+            <p class="resumo">
                 Uma marketer digital com sentido de missão e com mais de três anos de experiência em conduzir iniciativas promocionais. Sou uma especialista em online marketing, lead generation e nurturing. Tenho uma comunicação exemplar, aptidões interpessoais e trabalho bem sobre pressão de forma a atingir os objetivos.
             </p>
 
-            <div class="section-title">Experiência profissional</div>
+            <div class="titulo-secao">Experiência profissional</div>
 
-            <div class="job-item">
-                <div class="job-header">
-                    <span class="job-title">Junior SEO Marketer</span>
-                    <span class="job-date">2017 - 2019</span>
+            <div class="item-trabalho">
+                <div class="cabecalho-trabalho">
+                    <span class="titulo-trabalho">Junior SEO Marketer</span>
+                    <span class="data-trabalho">2017 - 2019</span>
                 </div>
-                <div class="job-location">Cyanca, Lisboa</div>
-                <ul class="job-details">
+                <div class="localizacao-trabalho">Cyanca, Lisboa</div>
+                <ul class="detalhes-trabalho">
                     <li>Página on/off SEO</li>
                     <li>Estratégias de linkbuilding</li>
                     <li>Criação de conteúdo relevante</li>
@@ -159,13 +159,13 @@
                 </ul>
             </div>
 
-            <div class="job-item">
-                <div class="job-header">
-                    <span class="job-title">Assistente de Vendas</span>
-                    <span class="job-date">2015 - 2016</span>
+            <div class="item-trabalho">
+                <div class="cabecalho-trabalho">
+                    <span class="titulo-trabalho">Assistente de Vendas</span>
+                    <span class="data-trabalho">2015 - 2016</span>
                 </div>
-                <div class="job-location">Salsa, Lisboa</div>
-                <ul class="job-details">
+                <div class="localizacao-trabalho">Salsa, Lisboa</div>
+                <ul class="detalhes-trabalho">
                     <li>Contribuição para os objetivos de vendas</li>
                     <li>Gestão de inventário</li>
                     <li>Apoio a clientes</li>
