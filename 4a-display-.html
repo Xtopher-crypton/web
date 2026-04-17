@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 4a - Display Vertical</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 500px;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+        }
+        .box {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: black;
+        }
+        .box-1 { background-color: purple; }
+        .box-2 { background-color: green; }
+        .box-3 { background-color: red; }
+        .box-4 { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1>Atividade 4a - Display Vertical</h1>
+    <div class="container">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+    </div>
+    <p><strong>Explicação:</strong> O layout utiliza <code>display: flex</code> com <code>flex-direction: column</code> (ou simplesmente o comportamento padrão de elementos <code>block</code>), fazendo com que cada item ocupe toda a largura disponível e se empilhe verticalmente.</p>
+</body>
+</html>
