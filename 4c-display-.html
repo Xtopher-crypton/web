@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 4c - Positions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 400px;
+            height: 400px;
+            border: 2px solid #ccc;
+            position: relative;
+            background-color: #f9f9f9;
+        }
+        .box {
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+        }
+        .box-red { background-color: red; top: 10px; left: 10px; }
+        .box-yellow { background-color: yellow; top: 10px; right: 10px; color: black; }
+        .box-blue { background-color: blue; bottom: 10px; left: 10px; }
+        .box-green { background-color: green; bottom: 10px; right: 10px; }
+        .box-magenta { 
+            background-color: magenta; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+    </style>
+</head>
+<body>
+    <h1>Atividade 4c - Positions</h1>
+    <div class="container">
+        <div class="box box-red">box1</div>
+        <div class="box box-yellow">box2</div>
+        <div class="box box-magenta">box3</div>
+        <div class="box box-blue">box4</div>
+        <div class="box box-green">box5</div>
+    </div>
+    <p><strong>Explicação:</strong> O container pai possui <code>position: relative</code>, servindo como ponto de referência para os filhos. Cada caixa (box) utiliza <code>position: absolute</code> e as propriedades <code>top, right, bottom, left</code> para serem posicionadas nos cantos e no centro (usando <code>transform: translate</code> para centralizar perfeitamente).</p>
+</body>
+</html>
