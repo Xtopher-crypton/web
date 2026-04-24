@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 4 - Galeria Flexbox</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container-galeria {
+            display: flex;
+            width: 90%;
+            height: 400px;
+            gap: 15px;
+        }
+        .item-galeria {
+            flex: 1;
+            border-radius: 40px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: flex 0.6s ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+        .item-galeria:hover {
+            flex: 5;
+        }
+        .info-galeria {
+            color: white;
+            background: rgba(0,0,0,0.4);
+            padding: 15px;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .item-galeria:hover .info-galeria {
+            opacity: 1;
+        }
+        .item-galeria h3 { margin-bottom: 5px; font-size: 18px; }
+        .item-galeria p { font-size: 13px; }
+
+        /* Cores e imagens de fundo */
+        .img-1 { background-image: url('https://picsum.photos/800/600?random=1'); }
+        .img-2 { background-image: url('https://picsum.photos/800/600?random=2'); }
+        .img-3 { background-image: url('https://picsum.photos/800/600?random=3'); }
+        .img-4 { background-image: url('https://picsum.photos/800/600?random=4'); }
+        .img-5 { background-image: url('https://picsum.photos/800/600?random=5'); }
+    </style>
+</head>
+<body>
+    <div class="container-galeria">
+        <div class="item-galeria img-1">
+            <div class="info-galeria">
+                <h3>Natureza 1</h3>
+                <p>Explorando as montanhas e lagos.</p>
+            </div>
+        </div>
+        <div class="item-galeria img-2">
+            <div class="info-galeria">
+                <h3>Floresta Densa</h3>
+                <p>O mistério da vida selvagem.</p>
+            </div>
+        </div>
+        <div class="item-galeria img-3">
+            <div class="info-galeria">
+                <h3>Oretamauw</h3>
+                <p>Omuke trughte a otufta</p>
+            </div>
+        </div>
+        <div class="item-galeria img-4">
+            <div class="info-galeria">
+                <h3>Deserto Vasto</h3>
+                <p>As dunas infinitas de areia.</p>
+            </div>
+        </div>
+        <div class="item-galeria img-5">
+            <div class="info-galeria">
+                <h3>Cidade Noturna</h3>
+                <p>Luzes e cores da metrópole.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

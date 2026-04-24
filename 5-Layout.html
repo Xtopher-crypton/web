@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 5 - Layout de Site Flexbox</title>
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #9acd32; /* Cor amarela-esverdeada conforme imagem */
+            padding: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+            height: 100px;
+            display: flex;
+            align-items: center;
+        }
+        main {
+            display: flex;
+            flex: 1; /* Ocupa o espaço restante entre header e footer */
+        }
+        article {
+            flex: 3; /* Ocupa a maior parte do espaço central */
+            background-color: white;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        aside {
+            flex: 1;
+            background-color: #fef9e7; /* Amarelo clarinho */
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        nav {
+            flex: 1;
+            background-color: #d5e8d4; /* Verde clarinho */
+            padding: 20px;
+        }
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <main>
+        <article>Article</article>
+        <aside>Aside</aside>
+        <nav>Nav</nav>
+    </main>
+    <footer>Footer</footer>
+</body>
+</html>
