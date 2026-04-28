@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2 - Layout Grid</title>
+    <style>
+        *{margin: 0; padding: 0;box-sizing: border-box;}
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            height: 100vh;
+            grid-template-areas: 
+                "header header"
+                "nav content"
+                "footer footer";
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 0;
+        }
+        header {
+            grid-area: header;
+            background: #e91e63;
+            padding: 20px;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav {
+            grid-area: nav;
+            background: #afb42b;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        main {
+            grid-area: content;
+            background: #ffb74d;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .content-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            height: 100%;
+        }
+        .box {
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        footer {
+            grid-area: footer;
+            background: #4db6ac;
+            padding: 20px;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>
+            <div class="content-inner">
+                <div class="box">Imagem</div>
+                <div class="box">Texto</div>
+            </div>
+        </main>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
