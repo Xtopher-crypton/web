@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: grid;
+            min-height: 100vh;
+            grid-template-areas: 
+                "header header header"
+                "banner banner banner"
+                "left main right"
+                "low low low"
+                "footer footer footer";
+            grid-template-columns: 100px 1fr 100px;
+            grid-template-rows: auto auto 1fr auto auto;
+            gap: 0;
+        }
+        header {
+            grid-area: header;
+            background: #ffc107;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+            font-size: 16px;
+        }
+        .banner {
+            grid-area: banner;
+            background: #ef5350;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .left {
+            grid-area: left;
+            background: #43a047;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+        main {
+            grid-area: main;
+            background: #2196f3;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+        }
+        .right {
+            grid-area: right;
+            background: #ffc107;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+        .low {
+            grid-area: low;
+            background: #43a047;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        footer {
+            grid-area: footer;
+            background: #2196f3;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-areas: 
+                    "header"
+                    "banner"
+                    "left"
+                    "main"
+                    "right"
+                    "low"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto auto auto auto;
+            }
+
+            header, .banner, .left, main, .right, .low, footer {
+                padding: 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <div class="banner">Banner</div>
+        <div class="left">Left Aside</div>
+        <main>Main Content</main>
+        <div class="right">Right Aside</div>
+        <div class="low">Low Content</div>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
