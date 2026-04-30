@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 5b - Lista Vertical Responsiva</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 100px 100px 100px;
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .block{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            min-height: 80px;
+        }
+
+        .orange{ background-color: #ff9800; grid-column: 1 / 2; grid-row: 1 / 2; }
+        .pink-light{ background-color: #f8bbd0; grid-column: 2 / 3; grid-row: 1 / 3; color: #333; }
+        .green-light{ background-color: #c8e6c9; grid-column: 3 / 5; grid-row: 1 / 2; color: #333; }
+        .blue-light{ background-color: #bbdefb; grid-column: 1 / 2; grid-row: 2 / 3; color: #333; }
+        .brown-light{ background-color: #d7ccc8; grid-column: 3 / 4; grid-row: 2 / 3; color: #333; }
+        .orange-bottom{ background-color: #ff9800; grid-column: 1 / 3; grid-row: 3 / 4; }
+        .yellow-bottom { background-color: #ffeb3b; grid-column: 3 / 5; grid-row: 3 / 4; color: #333; }
+
+        .circles-container{
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 0;
+        }
+        .circle{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+        .c1{ background-color: #ef9a9a; }
+        .c2{ background-color: #ce93d8; }
+        .c3{ background-color: #90caf9; }
+        .c4{ background-color: #a5d6a7; }
+
+        @media (max-width: 600px) {
+            .grid-container{
+                display: flex;
+                flex-direction: column;
+            }
+            .block{
+                grid-column: unset !important;
+                grid-row: unset !important;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            .circles-container{
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2 style="text-align: center; margin-bottom: 20px;">Redimensione a tela para menos de 600px</h2>
+
+    <div class="grid-container">
+        <a href="#" class="block orange">WEB</a>
+        <div class="block pink-light">HTML</div>
+        <div class="block green-light">CSS</div>
+        <div class="block blue-light">Animate</div>
+        <div class="block brown-light">Position</div>
+        
+        <div class="circles-container">
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+            <div class="circle c3"></div>
+            <div class="circle c4"></div>
+        </div>
+
+        <div class="block orange-bottom">Flex</div>
+        <div class="block yellow-bottom">Grid</div>
+    </div>
+
+</body>
+</html>

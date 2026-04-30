@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questão 5a - Site Responsivo</title>
+    <title>Questão 5a</title>
     <style>
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body {
+        body{
             font-family: Arial, sans-serif;
             background: #f5f5f5;
         }
-        nav {
+        nav{
             background: #333;
             padding: 15px;
             position: sticky;
@@ -25,17 +25,17 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        nav a {
+        nav a{
             color: white;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s;
             font-size: 14px;
         }
-        nav a:hover {
+        nav a:hover{
             color: #ffc107;
         }
-        .container {
+        .container{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
@@ -44,7 +44,7 @@
             margin: 0 auto;
             grid-auto-rows: 120px;
         }
-        .item {
+        .item{
             border-radius: 6px;
             display: flex;
             align-items: center;
@@ -55,36 +55,36 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
-        .item:hover {
+        .item:hover{
             transform: scale(1.05);
         }
-        .item1 { 
+        .item1{ 
             background: #ff9800; 
             grid-column: 1 / 2;
             grid-row: 1 / 2;
         }
-        .item2 { 
+        .item2{ 
             background: #f4a9a8; 
             grid-column: 2 / 3;
             grid-row: 1 / 3;
             color: #333;
         }
-        .item3 { 
+        .item3{ 
             background: #c8e6c9; 
             grid-column: 3 / 5;
             grid-row: 1 / 2;
         }
-        .item4 { 
+        .item4{ 
             background: #b3cce6; 
             grid-column: 1 / 2;
             grid-row: 2 / 3;
         }
-        .item5 { 
+        .item5{ 
             background: #d4a574; 
             grid-column: 3 / 4;
             grid-row: 2 / 3;
         }
-        .item6 { 
+        .item6{ 
             background: #e8b4a8; 
             grid-column: 4 / 5;
             grid-row: 2 / 3;
@@ -93,7 +93,7 @@
             border-radius: 50%;
             padding: 0;
         }
-        .item7 { 
+        .item7{ 
             background: #d4a5a5; 
             grid-column: 4 / 5;
             grid-row: 2 / 3;
@@ -103,7 +103,7 @@
             padding: 0;
             margin-top: 50px;
         }
-        .item8 { 
+        .item8{ 
             background: #c9d4a5; 
             grid-column: 4 / 5;
             grid-row: 2 / 3;
@@ -113,7 +113,7 @@
             padding: 0;
             margin-top: 100px;
         }
-        .item9 { 
+        .item9{ 
             background: #d4c5a5; 
             grid-column: 4 / 5;
             grid-row: 2 / 3;
@@ -123,45 +123,45 @@
             padding: 0;
             margin-top: 150px;
         }
-        .item10 { 
+        .item10{ 
             background: #ff9800; 
             grid-column: 1 / 3;
             grid-row: 3 / 4;
         }
-        .item11 { 
+        .item11{ 
             background: #c9d4a5; 
             grid-column: 3 / 5;
             grid-row: 3 / 4;
         }
-        @media (max-width: 768px) {
-            .container {
+        @media (max-width: 768px){
+            .container{
                 grid-template-columns: repeat(2, 1fr);
             }
-            .item2 {
+            .item2{
                 grid-row: 1 / 4;
             }
-            .item3 {
+            .item3{
                 grid-column: 1 / 2;
                 grid-row: 2 / 3;
             }
-            .item4 {
+            .item4{
                 grid-column: 2 / 3;
                 grid-row: 2 / 3;
             }
-            .item5 {
+            .item5{
                 grid-column: 1 / 2;
                 grid-row: 3 / 4;
             }
-            .item6, .item7, .item8, .item9 {
+            .item6, .item7, .item8, .item9{
                 grid-column: 2 / 3;
                 grid-row: 3 / 4;
                 margin: 0;
             }
-            .item10 {
+            .item10{
                 grid-column: 1 / 2;
                 grid-row: 4 / 5;
             }
-            .item11 {
+            .item11{
                 grid-column: 2 / 3;
                 grid-row: 4 / 5;
             }
