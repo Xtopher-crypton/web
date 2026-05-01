@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Questao 2 - Estrutura e Sintaxe</title>
+    <style>
+        button{
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: green;
+        }
+        .destaque::before{
+            content: "→ ";
+        }
+        .destaque::after{
+            content: " ✓";
+        }
+        @keyframes mudarCor{
+            0% { background-color: blue; }
+            50% { background-color: purple; }
+            100% { background-color: blue; }
+        }
+        .botao-animado{
+            animation: mudarCor 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questão 2 - Estrutura e Sintaxe do CSS</h1>
+
+    <h2>O que é uma regra CSS</h2>
+    <p>Uma regra CSS é composta por um seletor, propriedades e valores. 
+        O seletor indica qual elemento será estilizado, as propriedades definem o que será mudado, 
+        e os valores definem como será mudado.</p>
+
+    <h3>Exemplo de regra:</h3>
+    <pre>button{
+    padding: 10px 20px;
+    background-color: blue;
+    color: white;
+}</pre>
+
+    <p>Neste exemplo:</p>
+    <ul>
+        <li><strong>Seletor:</strong> button</li>
+        <li><strong>Propriedade:</strong> padding, background-color, color</li>
+        <li><strong>Valor:</strong> 10px 20px, blue, white</li>
+    </ul>
+
+    <h2>Pseudo-classe</h2>
+    <p>Uma pseudo-classe define um estado especial de um elemento. Exemplo: :hover quando o mouse passa sobre o elemento.</p>
+    <button>Passe o mouse aqui</button>
+
+    <h2>Pseudo-elemento</h2>
+    <p class="destaque">Este texto tem pseudo-elementos ::before e ::after</p>
+
+    <h2>Animação com @keyframes</h2>
+    <p>@keyframes permite criar animações. Você define os estados em 0%, 50%, 100% etc.</p>
+    <button class="botao-animado">Botão com animação</button>
+</body>
+</html>
