@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Responsivo - Mobile</title>
+    <style>
+        *{ margin: 0; }
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        header{
+            background-color: #2c2c2c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        aside{
+            background-color: lightgray;
+            padding: 20px;
+        }
+        main{
+            flex: 1;
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .card{
+            background-color: white;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+        footer {
+            background-color: #2c2c2c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Layout Mobile</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h3>Menu</h3>
+            <ul>
+                <li>Home</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </aside>
+
+        <main>
+            <div class="card">
+                <h2>Card 1</h2>
+                <p>Conteúdo 1</p>
+            </div>
+            <div class="card">
+                <h2>Card 2</h2>
+                <p>Conteúdo 2</p>
+            </div>
+            <div class="card">
+                <h2>Card 3</h2>
+                <p>Conteúdo 3</p>
+            </div>
+            <div class="card">
+                <h2>Card 4</h2>
+                <p>Conteúdo 4</p>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>Borracha</p>
+    </footer>
+</body>
+</html>
