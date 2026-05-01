@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Bandeiras</title>
+    <style>
+        body{
+            padding: 20px;
+        }
+        .bandeira{
+            margin: 20px 0;
+            
+        }
+        .bandeira>div{
+            width: 300px;
+            height: 200px;
+            border: 1px solid;
+            display: flex;
+        }
+        .franca div,
+        .alemanha div{
+            flex: 1;
+        }
+        .bandeira h2{
+            margin: 0 0 10px 0;
+        }
+        .azul{
+            background-color: darkblue;
+        }
+        .branco{
+            background-color: white;
+        }
+        .vermelho{
+            background-color: red;
+        }
+        .alemanha{
+            flex-direction: column;
+        }
+        .preto{
+            background-color: black;
+        }
+        .amarelo{
+            background-color: yellow;
+        }
+        .japao{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+        .circulo{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Questão 3 - Bandeiras</h1>
+
+    <div class="bandeira">
+        <h2>França</h2>
+        <div class="franca">
+            <div class="azul"></div>
+            <div class="branco"></div>
+            <div class="vermelho"></div>
+        </div>
+
+        <h2>Alemanha</h2>
+        <div class="alemanha">
+            <div class="preto"></div>
+            <div class="vermelho"></div>
+            <div class="amarelo"></div>
+        </div>
+
+        <h2>Japão</h2>
+        <div class="japao">
+            <div class="circulo"></div>
+        </div>
+    </div>
+</body>
+</html>
