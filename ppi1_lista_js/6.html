@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos em um Intervalo</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        div { margin-bottom: 10px; }
+        label { display: inline-block; width: 80px; }
+        input { width: 100px; padding: 5px; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #resultadoPrimos { margin-top: 20px; border: 1px solid #ccc; padding: 10px; min-height: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Números Primos em um Intervalo</h1>
+    <div>
+        <label for="inicio">Início:</label>
+        <input type="number" id="inicio" value="1">
+    </div>
+    <div>
+        <label for="fim">Fim:</label>
+        <input type="number" id="fim" value="100">
+    </div>
+    <button onclick="verificarPrimos()">Verificar</button>
+    <div id="resultadoPrimos"></div>
+
+    <script>
+        function ehPrimo(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function verificarPrimos() {
+            let inicio = parseInt(document.getElementById("inicio").value);
+            let fim = parseInt(document.getElementById("fim").value);
+
+            if (isNaN(inicio) || isNaN(fim)) {
+                alert("Por favor, insira números válidos para o intervalo.");
+                return;
+            }
+
+            // Normalizar limites
+            if (inicio > fim) {
+                [inicio, fim] = [fim, inicio]; // Troca os valores se início for maior que fim
+            }
+
+            const primosEncontrados = [];
+            for (let i = inicio; i <= fim; i++) {
+                if (ehPrimo(i)) {
+                    primosEncontrados.push(i);
+                }
+            }
+
+            const resultadoDiv = document.getElementById("resultadoPrimos");
+            if (primosEncontrados.length > 0) {
+                resultadoDiv.innerHTML = `Números primos entre ${inicio} e ${fim}: ${primosEncontrados.join(", ")}`;
+            } else {
+                resultadoDiv.innerHTML = `Não há números primos entre ${inicio} e ${fim}.`;
+            }
+        }
+    </script>
+</body>
+</html>
