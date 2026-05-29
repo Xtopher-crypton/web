@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Palíndromos</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        div { margin-bottom: 10px; }
+        label { display: inline-block; width: 80px; }
+        input { width: 200px; padding: 5px; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        #resultadoPalindromo { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Palíndromos</h1>
+    <div>
+        <label for="palavra">Palavra:</label>
+        <input type="text" id="palavra" placeholder="Digite uma palavra">
+    </div>
+    <button onclick="verificarPalindromo()">Verificar</button>
+    <p id="resultadoPalindromo"></p>
+
+    <script>
+        function verificarPalindromo() {
+            const palavra = document.getElementById("palavra").value.toLowerCase().replace(/[^a-z0-9]/g, "");
+            const palavraInvertida = palavra.split("").reverse().join("");
+            const resultadoElement = document.getElementById("resultadoPalindromo");
+
+            if (palavra === "") {
+                resultadoElement.innerText = "Por favor, digite uma palavra.";
+            } else if (palavra === palavraInvertida) {
+                resultadoElement.innerText = `"${palavra}" é um palíndromo.`;
+            }
+            else {
+                resultadoElement.innerText = `"${palavra}" não é um palíndromo.`;
+            }
+        }
+    </script>
+</body>
+</html>
