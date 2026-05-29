@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Variáveis e Operadores</title>
+</head>
+<body>
+    <h1>Tipos de Variáveis e Operadores</h1>
+    <button onclick="executarScript()">Executar Script</button>
+    <div id="resultados">
+        <p id="pstring"></p>
+        <p id="pnumber"></p>
+        <p id="pboolean"></p>
+        <p id="pundefined"></p>
+        <p id="pnull"></p>
+        <p id="pobject"></p>
+        <p id="parray"></p>
+        <h2>Operações entre tipos diferentes:</h2>
+        <p id="op1"></p>
+        <p id="op2"></p>
+        <p id="op3"></p>
+    </div>
+
+    <script>
+        function executarScript() {
+            let stringVar = "Olá, mundo!";
+            let numberVar = 123;
+            let booleanVar = true;
+            let undefinedVar;
+            let nullVar = null;
+            let objectVar = { nome: "Objeto", idade: 1 };
+            let arrayVar = [1, 2, 3];
+
+            document.getElementById("pstring").innerText = `stringVar: ${typeof stringVar}`;
+            document.getElementById("pnumber").innerText = `numberVar: ${typeof numberVar}`;
+            document.getElementById("pboolean").innerText = `booleanVar: ${typeof booleanVar}`;
+            document.getElementById("pundefined").innerText = `undefinedVar: ${typeof undefinedVar}`;
+            document.getElementById("pnull").innerText = `nullVar: ${typeof nullVar}`;
+            document.getElementById("pobject").innerText = `objectVar: ${typeof objectVar}`;
+            document.getElementById("parray").innerText = `arrayVar: ${typeof arrayVar}`;
+
+            let op1 = stringVar + numberVar;
+            let op2 = booleanVar * numberVar;
+            let op3 = "5" - 2;
+
+            console.log("string + number:", op1);
+            console.log("boolean * number:", op2);
+            console.log("string - number:", op3);
+
+            document.getElementById("op1").innerText = `"Olá, mundo!" + 123 = "${op1}" (Concatenação de string e number)`;
+            document.getElementById("op2").innerText = `true * 123 = ${op2} (boolean true é convertido para 1)`;
+            document.getElementById("op3").innerText = `"5" - 2 = ${op3} (string "5" é convertida para number)`;
+        }
+    </script>
+</body>
+</html>
