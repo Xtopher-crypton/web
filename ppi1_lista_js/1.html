@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O que é JavaScript?</title>
+</head>
+<body>
+    <h1 id="titulo">O que é JavaScript?</h1>
+    <p id="explicacao">
+        O JavaScript foi criado para tornar as páginas web mais interativas. Inicialmente, era executado apenas no navegador para manipular o DOM e responder a eventos do usuário. Com o tempo, o Node.js permitiu sua execução no servidor, ampliando suas aplicações para desenvolvimento backend. No navegador, o JavaScript opera em um ambiente "sandbox", que restringe seu acesso ao sistema operacional para garantir segurança. Objetos globais como `document` (para interagir com o HTML), `console` (para depuração) e `alert` (para exibir mensagens) são fundamentais para o desenvolvimento web.
+    </p>
+    <p id="horaAtual"></p>
+
+    <script>
+        console.log("Bem-vindo ao JavaScript!");
+        alert("Olá! Bem-vindo à página sobre JavaScript.");
+
+        function exibirHoraAtual() {
+            const agora = new Date();
+            document.getElementById("horaAtual").innerHTML = "Hora atual: " + agora.toLocaleTimeString();
+        }
+        exibirHoraAtual();
+        setInterval(exibirHoraAtual, 1000); // Atualiza a cada segundo
+    </script>
+</body>
+</html>
