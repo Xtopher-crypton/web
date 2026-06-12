@@ -22,7 +22,6 @@
         const saveButton = document.getElementById("saveButton");
         const greetingParagraph = document.getElementById("greeting");
 
-        // Ao carregar a página, tenta recuperar o nome do localStorage
         window.onload = function() {
             const savedName = localStorage.getItem("userName");
             if (savedName) {
@@ -33,7 +32,6 @@
             }
         };
 
-        // Ao clicar no botão Salvar, salva o nome no localStorage
         saveButton.addEventListener("click", function() {
             const userName = nameInput.value;
             if (userName) {
