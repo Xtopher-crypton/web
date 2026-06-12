@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Aritmética</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .calculator { border: 1px solid #ccc; padding: 20px; width: 300px; text-align: center; }
+        input[type="number"] { width: 80%; padding: 10px; margin-bottom: 10px; font-size: 1.2em; }
+        .buttons button { width: 60px; height: 60px; font-size: 1.5em; margin: 5px; cursor: pointer; }
+        #resultado { margin-top: 20px; font-size: 1.5em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Aritmética</h1>
+    <div class="calculator">
+        <input type="number" id="num1" placeholder="Primeiro número">
+        <input type="number" id="num2" placeholder="Segundo número">
+        <div class="buttons">
+            <button onclick="calcular('+')">+</button>
+            <button onclick="calcular('-')">-</button>
+            <button onclick="calcular('*')">*</button>
+            <button onclick="calcular('/')">/</button>
+        </div>
+        <p id="resultado">Resultado: </p>
+    </div>
+
+    <script>
+        function calcular(operador) {
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            let resultado;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, insira números válidos.");
+                return;
+            }
+
+            switch (operador) {
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        alert("Divisão por zero não é permitida.");
+                        return;
+                    }
+                    resultado = num1 / num2;
+                    break;
+                default:
+                    return;
+            }
+            document.getElementById("resultado").innerText = "Resultado: " + resultado.toFixed(2);
+        }
+    </script>
+</body>
+</html>
