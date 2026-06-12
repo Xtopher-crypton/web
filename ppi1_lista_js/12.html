@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input { padding: 8px; margin-right: 10px; }
+        button { padding: 8px 15px; }
+        p { margin-top: 20px; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>Salvando dados no Local Storage</h1>
+    <input type="text" id="nameInput" placeholder="Digite seu nome">
+    <button id="saveButton">Salvar</button>
+    <p id="greeting"></p>
+
+    <script>
+        const nameInput = document.getElementById("nameInput");
+        const saveButton = document.getElementById("saveButton");
+        const greetingParagraph = document.getElementById("greeting");
+
+        // Ao carregar a página, tenta recuperar o nome do localStorage
+        window.onload = function() {
+            const savedName = localStorage.getItem("userName");
+            if (savedName) {
+                greetingParagraph.innerText = `Olá, ${savedName}!`;
+                nameInput.value = savedName;
+            } else {
+                greetingParagraph.innerText = "Nenhum nome salvo ainda.";
+            }
+        };
+
+        // Ao clicar no botão Salvar, salva o nome no localStorage
+        saveButton.addEventListener("click", function() {
+            const userName = nameInput.value;
+            if (userName) {
+                localStorage.setItem("userName", userName);
+                greetingParagraph.innerText = `Olá, ${userName}!`;
+                alert("Nome salvo com sucesso!");
+            } else {
+                alert("Por favor, digite um nome para salvar.");
+            }
+        });
+    </script>
+</body>
+</html>
