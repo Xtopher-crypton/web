@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudança de Cor de Fundo</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color 0.5s ease;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #corAtual{
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mudar Cor de Fundo</h1>
+    <button onclick="mudarCorFundo()">Mudar Cor</button>
+    <p id="corAtual">Cor atual: #FFFFFF</p>
+
+    <script>
+        function gerarCorAleatoria() {
+            const letras = "0123456789ABCDEF";
+            let cor = "#";
+            for (let i = 0; i < 6; i++) {
+                cor += letras[Math.floor(Math.random() * 16)];
+            }
+            return cor;
+        }
+
+        function mudarCorFundo() {
+            const novaCor = gerarCorAleatoria();
+            document.body.style.backgroundColor = novaCor;
+            document.getElementById("corAtual").innerText = `Cor atual: ${novaCor}`;
+
+            navigator.clipboard.writeText(novaCor).then(() => {
+                console.log("Cor copiada para a área de transferência: " + novaCor);
+            }).catch(err => {
+                console.error("Erro ao copiar a cor: ", err);
+            });
+        }
+    </script>
+</body>
+</html>
