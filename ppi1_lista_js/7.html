@@ -3,40 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador de Palíndromos</title>
+    <title>Captura de Teclas do Teclado</title>
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
-        div { margin-bottom: 10px; }
-        label { display: inline-block; width: 80px; }
-        input { width: 200px; padding: 5px; }
-        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #0056b3; }
-        #resultadoPalindromo { margin-top: 20px; font-weight: bold; }
+        #saida { 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            min-height: 100px; 
+            margin-top: 20px; 
+            font-size: 1.2em; 
+            background-color: #f9f9f9;
+            white-space: pre-wrap; /* Mantém espaços e quebras de linha */
+            word-wrap: break-word;
+        }
+        .key-info {
+            color: #666;
+            font-size: 0.8em;
+            margin-left: 5px;
+            background: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
-    <h1>Verificador de Palíndromos</h1>
-    <div>
-        <label for="palavra">Palavra:</label>
-        <input type="text" id="palavra" placeholder="Digite uma palavra">
-    </div>
-    <button onclick="verificarPalindromo()">Verificar</button>
-    <p id="resultadoPalindromo"></p>
+    <h1>Captura de Teclas do Teclado</h1>
+    <p>Pressione qualquer tecla para ver o resultado abaixo (inclui o desafio extra):</p>
+    <div id="saida"></div>
 
     <script>
-        function verificarPalindromo() {
-            const palavra = document.getElementById("palavra").value.toLowerCase().replace(/[^a-z0-9]/g, "");
-            const palavraInvertida = palavra.split("").reverse().join("");
-            const resultadoElement = document.getElementById("resultadoPalindromo");
+        const saidaDiv = document.getElementById("saida");
+        let teclasDigitadas = [];
 
-            if (palavra === "") {
-                resultadoElement.innerText = "Por favor, digite uma palavra.";
-            } else if (palavra === palavraInvertida) {
-                resultadoElement.innerText = `"${palavra}" é um palíndromo.`;
-            }
+        document.addEventListener("keydown", function(event) {
+            console.log("Tecla pressionada:", event.key, "| Code:", event.code);
+
+            // Desafio Extra: Tratar Backspace para apagar o último item
+            if (event.key === "Backspace") {
+                teclasDigitadas.pop();
+            } 
+            // Captura caracteres imprimíveis ou teclas de controle específicas
             else {
-                resultadoElement.innerText = `"${palavra}" não é um palíndromo.`;
+                let char = event.key;
+                
+                // Ajuste para exibição visual de teclas de controle
+                if (event.key === " ") char = " "; // Espaço
+                
+                // Só adiciona se for uma tecla de caractere (length 1) ou Enter/Space
+                if (event.key.length === 1 || event.key === "Enter") {
+                    teclasDigitadas.push({
+                        char: char,
+                        code: event.code
+                    });
+                }
             }
+
+            // Renderiza o conteúdo no div
+            renderizarSaida();
+        });
+
+        function renderizarSaida() {
+            saidaDiv.innerHTML = "";
+            teclasDigitadas.forEach(item => {
+                const spanChar = document.createElement("span");
+                spanChar.textContent = item.char === "Enter" ? "\n" : item.char;
+                
+                const spanCode = document.createElement("span");
+                spanCode.className = "key-info";
+                spanCode.textContent = `[${item.code}]`;
+                
+                saidaDiv.appendChild(spanChar);
+                saidaDiv.appendChild(spanCode);
+            });
         }
     </script>
 </body>
